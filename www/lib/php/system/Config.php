@@ -51,6 +51,8 @@ class Config {
 		switch ($this->server_name) {
 
 			case "boiler.evb.com":
+			case 'ubme.herokuapp.com':
+				
 				$this->environment = LOCAL;
 				$this->dbhost = 'localhost';
 				$this->dbuser = "root";
