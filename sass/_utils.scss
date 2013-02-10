@@ -1,0 +1,9 @@
+@mixin btn ($image) {
+  $image_path: "buttons/#{$image}.png";
+  @extend .ir; 
+  @include buttons-sprite($image); 
+  width: image-width($image_path); 
+  height: image-height($image_path);
+  cursor: pointer;
+  border: 0;
+}

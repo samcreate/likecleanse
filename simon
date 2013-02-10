@@ -1,0 +1,263 @@
+#!/usr/bin/php
+<?php
+
+
+$command = $argv[1];
+$repo_url = "";
+
+
+
+switch ($command) {
+	case 'setup':
+
+		$response = strtolower(askQuestion("Do you want to setup your project namespace? [y/n]"));
+
+		if ($response === "y") {
+			_replace_namespace();
+		} elseif ($response != "n") {
+			e_check("", "Invalid Answer: " . $response);
+		}
+
+		$response = strtolower(askQuestion("Do you want to setup your local DB? [y/n]"));
+
+		if ($response === "y") {
+			_setup_db();
+		} elseif ($response != "n") {
+			e_check("", "Invalid Answer: " . $response);
+		}
+
+		$response = strtolower(askQuestion("Do you want to set the Google Analytics tracking id? [y/n]"));
+
+		if ($response === "y") {
+			_setup_tracking();
+		} elseif ($response != "n") {
+			e_check("", "Invalid Answer: " . $response);
+		}
+
+		_sucess_msg();
+
+	break;
+
+	case "add" :
+
+		if ($argv[2] === "section") {
+			_add_section();
+			_sucess_msg();
+		}
+
+		if ($argv[2] === "repo") {
+			_add_repo();
+			_sucess_msg();
+		}
+
+	break;
+
+	case 'help':
+		echo 
+			"\nI am eager to help you.  I can be quite useful, despite my petite hands." . 
+			"\n" .
+			"\nCommands:" .
+			"\n   * setup           - Sets up the project namespace, local database, and Google Analytics tracking ID.  Each is optional." .
+			"\n   * add section     - Builds scaffolding for a new section with model (optional), view, controller, js, and routes." .
+			"\n   * add repo        - Creates a Beanstalk repository and returns the location." .
+			"\n\n";
+
+	break;
+
+	default:
+		echo "WTF are you trying to do?  If you're confused, run \"simon help\".  Jeez.\n";
+	break;
+}
+
+
+function _setup_boilerplate () {
+
+}
+
+
+function _SearchandReplaceFILE ($p_file, $stringsearch, $stringreplace) {
+	// read the file
+	$file = file_get_contents($p_file);
+	// replace the data
+	$file = str_replace($stringsearch, $stringreplace, $file);
+	// write the file
+	file_put_contents($p_file, $file);
+}
+ 
+function _SearchandReplaceDIR ($dir, $stringsearch, $stringreplace) {
+	$listDir = array();
+	if ($handler = opendir($dir)) {
+		while (($sub = readdir($handler)) !== FALSE) {
+			if ($sub != "." && $sub != ".." && $sub != "Thumb.db") {
+				if (is_file($dir . "/" . $sub)) {
+					if (substr_count($sub,'.php') || substr_count($sub,'.js') || substr_count($sub,'.html') || substr_count($sub,'.tpl')) {
+						$getfilecontents = file_get_contents($dir . "/" . $sub);
+						if (substr_count($getfilecontents,$stringsearch) > 0) {
+							$replacer = str_replace($stringsearch,$stringreplace,$getfilecontents);
+							// Let's make sure the file exists and is writable first.
+							if (is_writable($dir . "/" . $sub)) {
+								if (!$handle = fopen($dir . "/" . $sub, 'w')) {
+									echo "Cannot open file (" . $dir . "/" . $sub . ")\n";
+									exit;
+								}
+								// Write $somecontent to our opened file.
+								if (fwrite($handle, $replacer) === FALSE) {
+									echo "Cannot write to file (" . $dir . "/" . $sub . ")\n";
+									exit;
+								}
+								fclose($handle);
+							} else {
+								//echo "The file " . $dir . "/" . $sub . " is not writable \n";
+							}
+						}
+					}
+					$listDir[] = $sub;
+				} elseif (is_dir($dir . "/" . $sub)) {
+					$listDir[$sub] = _SearchandReplaceDIR($dir . "/" . $sub, $stringsearch, $stringreplace);
+				}
+			}
+		}
+		closedir($handler);
+	}
+	return $listDir;
+}
+
+function e_check ($p, $msg, $try_again = false) {
+	if (isset($p) && strlen($p) != 0) {
+		echo $p;
+		return $p;
+	} else if ($try_again == 1) {
+		return askQuestion("\n-> Cannot be blank! Try again: ");
+	} else {
+		echo "Missing parameter: " . $msg . "! Try again. \n";
+		exit;
+	}
+}
+
+function askQuestion ($p_question) {
+	echo $p_question . ": ";
+	system('stty -echo');
+	$answer = trim(fgets(STDIN));
+	system('stty echo');
+	$answer = e_check($answer, "Please enter a value.", true);
+	echo "\n";
+	return $answer;
+}
+
+function _setup_db () {
+	$host = askQuestion("-> What is the DB host?");
+	$username = askQuestion("-> What is the DB Username?");
+	$password = askQuestion("-> What is the DB password?");
+	$dbname = askQuestion("-> What is the DB name?");
+
+	$file = "./www/lib/php/system/Config.php";
+	_SearchandReplaceFILE($file, "%l_host%", $host);
+	_SearchandReplaceFILE($file, "%l_user%", $username);
+	_SearchandReplaceFILE($file, "%l_pass%", $password);
+	_SearchandReplaceFILE($file, "%l_dbname%", $dbname);
+}
+
+function _replace_namespace () {
+	$stringsearch = "CHANGE_ME";
+	$stringreplace = askQuestion("-> What do you want as the namespace? (no spaces [aA-zZ]) ");
+	$dir = "./";
+	_SearchandReplaceDIR($dir, $stringsearch, $stringreplace);
+	echo "\n";
+}
+
+function _setup_tracking () {
+	$tracking_id = askQuestion("-> Google Tracking ID");
+	$file = "./www/lib/php/system/Config.php";
+	_SearchandReplaceFILE($file, "%google_id%", $tracking_id);
+}
+
+function _add_section () {
+	$section_name = askQuestion("-> Name (no spaces [aA-zZ]) ");
+	// $section_name = ucfirst($section_name);
+
+	// controller
+	$ctrl_startpoint = "./scaffolding/simon/controller.tpl";
+	$ctrl_endpoint = "./www/lib/php/controller/".$section_name.".php";
+	exec ("cp ".$ctrl_startpoint." ".$ctrl_endpoint );
+	_SearchandReplaceFILE($ctrl_endpoint, "%name%", $section_name);
+
+	// view
+	$ctrl_startpoint = "./scaffolding/simon/view.tpl";
+	$ctrl_endpoint = "./www/lib/php/view/".$section_name.".php";
+	exec ("cp ".$ctrl_startpoint." ".$ctrl_endpoint );
+
+	//javascript singleton
+	$ctrl_startpoint = "./scaffolding/standards/js_template.js";
+	$ctrl_endpoint = "./www/lib/js/".$section_name.".js";
+	exec ("cp ".$ctrl_startpoint." ".$ctrl_endpoint );
+	_SearchandReplaceFILE($ctrl_endpoint, "CLASS_NAME", $section_name);
+	_SearchandReplaceFILE("./www/lib/php/template/footer.php", "<!-- END: DEV javascript -->", "<script src=\"/lib/js/".$section_name.".js\" type=\"text/javascript\" charset=\"utf-8\"></script>\n\t<!-- END: DEV javascript -->");
+	_SearchandReplaceFILE("./www/lib/js/master.js", "*/", "* @depends ".$section_name.".js \n */");
+
+	// routes
+	$routes = "./www/lib/php/system/config.routes.php";
+	$current_routedata = file_get_contents($routes, true);
+	$current_routedata = str_replace("?>", "", $current_routedata);
+	$current_routedata .= "Router::add('/".$section_name."', DIR_CTRL.'/".$section_name.".php');\n ?>";
+	file_put_contents($routes, $current_routedata);
+
+	$response = strtolower(askQuestion("Do you want to add a Model? [y/n]"));
+
+	if ($response === "y") {
+		// model
+		$ctrl_startpoint = "./scaffolding/simon/model.tpl";
+		$ctrl_endpoint = "./www/lib/php/model/".$section_name.".php";
+		exec ("cp ".$ctrl_startpoint." ".$ctrl_endpoint );
+		_SearchandReplaceFILE($ctrl_endpoint, "%name%", $section_name);
+	}
+}
+
+function _add_repo () {
+
+	$repo_name = askQuestion("-> What do you want to call the repository? (no spaces [aA-zZ])");
+	$repo_username = askQuestion("-> Beanstalk Username?");
+	$repo_pass = askQuestion("-> Beanstalk Password?");
+	$beanstalkapp_account = askQuestion("-> Beanstalk Account name?");
+
+	$url = "https://" . $repo_username . ":" . $repo_pass . "@" . $beanstalkapp_account . ".beanstalkapp.com/api/repositories.json";
+
+	$data_array = array('repository' => array());
+	$data_array['repository']['name'] = $repo_name;
+	$data_array['repository']['type_id'] = "git";
+	$data_array['repository']['title'] = $repo_name;
+	$data_array['repository']['color_label'] = "label-blue";
+	$data = json_encode($data_array);
+
+	//open connection
+	$ch = curl_init();
+
+	//set the url, number of POST vars, POST data
+	$headers = array('Content-type: application/json');
+	curl_setopt($ch, CURLOPT_USERAGENT,'evolveit');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_POST, count($data_array));
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+	//execute post
+	$result = curl_exec($ch);
+	$result = json_decode($result);
+
+	if (!empty($result->errors)) {
+		echo $result->errors[0] . "\n";
+		exit;
+	} else {
+		$repo_url = $result->git_repository->repository_url;
+		echo "-> Repo location: " . $result->git_repository->repository_url;
+	}
+
+	//close connection
+	curl_close($ch);
+}
+
+function _sucess_msg () {
+	echo "\n-> Simon: Finished!  ( ͡° ͜ʖ ͡°)﻿ \n";
+}
+
+?>
