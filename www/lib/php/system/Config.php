@@ -50,7 +50,7 @@ class Config {
 				
 		switch ($this->server_name) {
 
-			case "boiler.evb.com":
+			case "ubme.evb.com":
 			case 'ubme.herokuapp.com':
 				
 				$this->environment = LOCAL;
@@ -62,7 +62,8 @@ class Config {
 				$this->base_url = "/";
 				$this->use_min = FALSE;
 				$this->debug = FALSE;
-				$this->facebook_app_id = "";
+				$this->facebook_app_id = "514990135211093";
+				$this->facebook_app_secret = "c7cbac8a8512698baf0fbbcc4f01b8ec";
 			break;
 			
 			case "production_url.com":
