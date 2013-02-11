@@ -43,7 +43,7 @@ ubme.facebook = function () {
 		          picture: window.location.href+"/media/images/facebook_share.jpg",
 		          name: 'I just removed '+_count+' likes I didn\'t know I had',
 		          caption: 'Cleaning likes you didn\'t know you had',
-		          description: 'We all have liked things in the past... maybe too many things to remember. Now those very things are being used to advertise to your friends! I created this tool in efforts to reducing wall clutter that we might not have known we had. Click the button bellow to login, view the items that might be un-worthy of your \'liking\' and then simply \'un-like\' them.'
+		          description: 'We have all liked things in the past... too many things to remember. Now advertisers are using those things to target our friends. STOP THEM! Reduce the clutter you didn\'t know you had.  Login below to see the brands targeting you and \'un-like\' the unworthy ones.'
 		        };
 				 FB.ui(obj, function(){
 				 	debug.log("share success");
