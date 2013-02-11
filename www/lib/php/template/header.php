@@ -14,10 +14,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="favicon.ico"/> 
 
-		<meta name="description" content=""/> 
+		<meta name="description" content="We have all liked things in the past... too many things to remember. Now Facebook is using those 'likes' to target our friends. STOP THE INSANITY! Reduce the clutter you didn't know you had.  Login below to see the brands targeting you and 'un-like' the unworthy ones."/> 
 		<meta name="keywords" content=""/>
-		<meta name="description" content="">
-		<meta name="author" content="">
+		<meta name="author" content="Aaron McGuire">
 	<!-- END: meta tags -->
 
 	<!-- BEGIN: OG FBook meta tags -->
@@ -26,9 +25,9 @@
 
 		<meta property="fb:admins" content=""/> 
 		<meta property="og:url" content=""/> 
-		<meta property="og:title" content="" /> 
+		<meta property="og:title" content="Like Cleanser" /> 
 		<meta property="og:site_name" content=""/> 
-		<meta property="og:description" content=""/> 
+		<meta property="og:description" content="We have all liked things in the past... too many things to remember. Now Facebook is using those 'likes' to target our friends. STOP THE INSANITY! Reduce the clutter you didn't know you had.  Login below to see the brands targeting you and 'un-like' the unworthy ones."/> 
 	<!-- END: OG FBook meta tags -->
 
 	<!-- BEGIN: <?= $settings->environment ?> styles -->
