@@ -52,7 +52,6 @@ class Config {
 
 			case "ubme.evb.com":
 			
-				
 				$this->environment = LOCAL;
 				$this->dbhost = 'localhost';
 				$this->dbuser = "root";

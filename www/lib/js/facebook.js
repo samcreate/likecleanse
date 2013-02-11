@@ -9,6 +9,8 @@ ubme.facebook = function () {
 	// =================================================
 	var _likes = {};
 	var _filtered_likes = [];
+	var _count = 0;
+	var _init = false;
 	
 	
 	// =================================================
@@ -23,11 +25,30 @@ ubme.facebook = function () {
 				debug.log('- initialized'); 
 
 				//--> sof private functions
+					_init = true;
 					_check_loginstatus();
+					_setup_binds();
+
 				//--> eof private functions
 
 			debug.groupEnd();
 
+		},
+		share : function(){
+		
+				 var obj = {
+		          method: 'feed',
+		          redirect_uri: window.location.href,
+		          link: window.location.href,
+		          picture: window.location.href+"/media/images/facebook_share.jpg",
+		          name: 'I just removed '+_count+' likes I didn\'t know I had',
+		          caption: 'Cleaning likes you didn\'t know you had',
+		          description: 'We all have liked things in the past... maybe too many things to remember. Now those very things are being used to advertise to your friends! I created this tool in efforts to reducing wall clutter that we might not have known we had. Click the button bellow to login, view the items that might be un-worthy of your \'liking\' and then simply \'un-like\' them.'
+		        };
+				 FB.ui(obj, function(){
+				 	debug.log("share success");
+				 });
+			
 		}
 		
 	};
@@ -138,6 +159,16 @@ ubme.facebook = function () {
 
 		
 		$(document.body).trigger("finished", {likes:_filtered_likes});
+	}
+
+	function _setup_binds () {
+		FB.Event.subscribe('edge.remove',
+		    function(response) {
+		        debug.log('You unliked the URL: ' + response);
+		        _count++;
+		        $('#count').text(_count);
+		    }
+		);
 	}
 
 

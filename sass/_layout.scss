@@ -1,6 +1,6 @@
 /* import your sprites here */
 /* @import "buttons/*.png"; */
-
+@import "compass/css3/border-radius";
 /* Global */
 .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .hidden { display: none; visibility: hidden; }
@@ -67,6 +67,16 @@ margin-top: 28px;
 			margin-top:50px;
 			width:100%;
 			text-align: left;
+		}
+
+		#notice{
+			position:fixed;
+			bottom:-10px;
+			right:10px;
+			background:white;
+			padding:10px;
+			@include border-radius(10px, 10px);
+			border: 3px solid #ccc;
 		}
 	}
 }

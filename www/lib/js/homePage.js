@@ -73,11 +73,18 @@ ubme.homePage = function () {
 		});
 
 
-		 
-
 		$(document.body).on('click', '.show-modal', function (e) {
 			e.preventDefault();
 			ubme.modal.show('hi! this is a modal!', 'hello-modal');
+		});
+
+		
+		
+		$('body').on('click', '#share',function(e){
+			e.preventDefault();
+			ubme.facebook.share();
+			debug.log('share clicked')
+			
 		});
 
 	}
