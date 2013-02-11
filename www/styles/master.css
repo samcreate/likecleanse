@@ -71,6 +71,7 @@ body { padding-top: 20px; padding-bottom: 40px; }
 #MainContent { width: 810px; margin: 0px auto; }
 #MainContent #likeHolder { margin: 0px auto; width: 90%; }
 #MainContent #likeHolder .like { background: #eee; padding: 5px; margin: 5px; padding-left: 20px; }
+#MainContent #likeHolder .like .likebtn { background: rgba(255, 255, 255, 0.75); -webkit-border-radius: 10px 10px; -moz-border-radius: 10px / 10px; -ms-border-radius: 10px / 10px; -o-border-radius: 10px / 10px; border-radius: 10px / 10px; width: 95%; padding: 9px; height: 75px; margin: 20px 0px; }
 
 /* Global Footer */
 #global-footer { margin: 0 auto; width: 810px; text-align: center; }

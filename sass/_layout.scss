@@ -126,6 +126,14 @@ margin-top: 28px;
 			padding:5px;
 			margin: 5px;
 			padding-left:20px;
+			.likebtn{
+				background:rgba(255, 255, 255, 0.75);
+				@include border-radius(10px, 10px);
+				width: 95%;
+				padding: 9px;
+				height: 75px;
+				margin: 20px 0px;
+			}
 		}
 
 	}
