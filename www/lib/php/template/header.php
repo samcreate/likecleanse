@@ -51,8 +51,6 @@
 </head>
 <body class="<?php if (isset($class)) echo $class; ?>">
 	<div id="PageWrapper">
-		<header id="global-header">
-			<h1><a href="#">ubme</a></h1>
-		</header>
-
 		<div id="MainContent" role="main">
+		<div class="jumbotron">
+			<h1>Facebook Cleanser</h1>

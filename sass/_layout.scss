@@ -16,12 +16,53 @@ a { color: black; }
 
 /* Body */
 body {
+		padding-top: 20px;
+        padding-bottom: 40px;
+}
 
+
+
+/* Custom container */
+.container-narrow {
+margin: 0 auto;
+max-width: 700px;
+}
+.container-narrow > hr {
+margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+
+
+/* Supporting marketing content */
+.marketing {
+margin: 60px 0;
+}
+.marketing p + h4 {
+margin-top: 28px;
 }
 
 /* PageWrapper */
 #PageWrapper {
-
+	width:90%;
+	margin:0px auto;
+	.jumbotron {
+		margin: 60px 0;
+		text-align: center;
+		h1{
+			font-size: 72px;
+			line-height: 1;
+		}
+		.btn {
+			font-size: 21px;
+			padding: 14px 24px;
+			display: none;
+		}
+		p.lead {
+			width:80%;
+			margin:0px auto 40px auto;
+		}
+	}
 }
 
 /* Global Header */
@@ -33,6 +74,20 @@ body {
 
 /* Main Content */
 #MainContent {
+	width: 810px;
+	margin:0px auto;
+	#likeHolder{
+		margin: 0px auto;
+		width: 90%;
+		.like{
+			background:#eee;
+			padding:5px;
+			margin: 5px;
+			padding-left:20px;
+		}
+
+	}
+	
 
 }
 

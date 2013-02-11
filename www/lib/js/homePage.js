@@ -31,8 +31,8 @@ ubme.homePage = function () {
 			debug.groupEnd();
 
 		},
-		showLikes : function(p_likes){
-			var data = {like: p_likes};
+		showLikes : function(p_obj){
+			var data = {like: p_obj.likes};
 			var likes = likes_template(data);
 			$("#MainContent").append(likes);
 			FB.XFBML.parse();
@@ -49,7 +49,31 @@ ubme.homePage = function () {
 	// ================================================
 	function _setupBinds () {
 
-		$(document.body).bind('fbinit', ubme.facebook.init);
+		$(document.body).bind('fbinit',function(){
+			$("#PageWrapper .jumbotron .btn").fadeIn("slow");
+		});
+
+		$(document.body).on('click', '#PageWrapper .jumbotron .btn', function (e) {
+			e.preventDefault();
+			$(this).button('loading');
+			ubme.facebook.init();
+			debug.log("called");
+		});
+
+
+		$(document.body).bind('finished',function(e, p_filteredlikes){
+
+			$('#PageWrapper .jumbotron .btn').button('complete').fadeTo('slow', 0.5);
+
+			$(document.body).off('click', '#PageWrapper .jumbotron .btn')
+			self.showLikes(p_filteredlikes);
+
+
+
+		});
+
+
+		 
 
 		$(document.body).on('click', '.show-modal', function (e) {
 			e.preventDefault();

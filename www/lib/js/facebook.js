@@ -134,7 +134,8 @@ ubme.facebook = function () {
 		}
 
 
-		ubme.homePage.showLikes(_filtered_likes);
+		
+		$(document.body).trigger("finished", {likes:_filtered_likes});
 	}
 
 
