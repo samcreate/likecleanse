@@ -67,6 +67,8 @@ class Config {
 			break;
 			
 			case 'ubme.herokuapp.com':
+			case 'www.likecleanse.com':
+			case 'likecleanse.com':
 				//turn off error reporting for production
 				error_reporting(0);
 				ini_set('display_errors', '0');
