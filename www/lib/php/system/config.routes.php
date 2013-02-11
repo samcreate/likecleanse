@@ -1,6 +1,7 @@
 <?php
 
 Router::add('/', DIR_CTRL.'/index.php');
+Router::add('/index', DIR_CTRL.'/index.php');
 Router::add('#^/regex/(test1|test2|test3)/$#', DIR_CTRL.'/regex.php', Router::ROUTE_PCRE);
 
 /**
