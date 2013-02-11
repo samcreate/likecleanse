@@ -40,7 +40,7 @@ class Config {
 	var $page;
 	var $js_path;
 	var $css_path;
-	var $title = "Evolution Bureau";
+	var $title = "UnBrand Me";
 	 
 	private function __construct ($server_name = '') {
 		
