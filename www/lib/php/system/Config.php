@@ -51,7 +51,7 @@ class Config {
 		switch ($this->server_name) {
 
 			case "ubme.evb.com":
-			case 'ubme.herokuapp.com':
+			
 				
 				$this->environment = LOCAL;
 				$this->dbhost = 'localhost';
@@ -66,12 +66,12 @@ class Config {
 				$this->facebook_app_secret = "c7cbac8a8512698baf0fbbcc4f01b8ec";
 			break;
 			
-			case "production_url.com":
+			case 'ubme.herokuapp.com':
 				//turn off error reporting for production
 				error_reporting(0);
 				ini_set('display_errors', '0');
 
-				$this->environment = PROD;
+				$this->environment = STAGE;
 				$this->dbhost = 'localhost';
 				$this->dbuser = "root";
 				$this->dbpass = "root";
@@ -80,7 +80,8 @@ class Config {
 				$this->base_url = "/";
 				$this->use_min = FALSE;
 				$this->debug = FALSE;
-				$this->facebook_app_id = "";
+				$this->facebook_app_id = "338710086238137";
+				$this->facebook_app_secret = "8bb845c9004c673120a466f5db891cc6";
 			break;
 
 			default:
