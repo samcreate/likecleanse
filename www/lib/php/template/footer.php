@@ -40,7 +40,7 @@
 
 	<script type="text/javascript">	
 		<?php 
-			if (defined('URI_PART_0')) {
+			if (defined('URI_PART_0') && URI_PART_0 != "index") {
 				$nm_space = str_replace("-", "", URI_PART_0);
 				echo "ubme.main.queue(ubme.".$nm_space.".init);";
 			} else {
