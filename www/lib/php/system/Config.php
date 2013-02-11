@@ -40,7 +40,7 @@ class Config {
 	var $page;
 	var $js_path;
 	var $css_path;
-	var $title = "UnBrand Me";
+	var $title = "Like Cleansing";
 	 
 	private function __construct ($server_name = '') {
 		
