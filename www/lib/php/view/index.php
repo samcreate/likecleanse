@@ -11,7 +11,9 @@
 	      <a class="btn btn-danger" href="#">Try Again</a> 
 	    </p>
   	</div>
-  	<div id="lholder"></div>
+  	<div id="lholder">
+  		
+  	</div>
   	<div id="notice">
   		<p>You've cleaned up: <em id="count">0</em> likes</p> 
   		<a href="#" class="btn" id="share">Share</a>

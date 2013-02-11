@@ -1,4 +1,5 @@
 <script id="likes-template" type="text/x-handlebars-template">
+<p class="help text-info">*Click the Like buttons to "unlike" them.</p>
 <ul id="likeHolder">
 	{{#each like}}
 	<li class="like">
