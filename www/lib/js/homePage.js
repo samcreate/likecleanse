@@ -23,7 +23,7 @@ ubme.homePage = function () {
 				debug.log('- initialized'); 
 
 				//--> sof private functions
-
+					_set_cookieval();
 					_setupBinds();
 
 				//--> eof private functions
@@ -53,7 +53,7 @@ ubme.homePage = function () {
 			$("#PageWrapper .jumbotron .btn").fadeIn("slow");
 		});
 
-		$(document.body).on('click', '#PageWrapper .jumbotron .btn', function (e) {
+		$(document.body).on('click', '#PageWrapper .jumbotron .cleanme', function (e) {
 			e.preventDefault();
 			$(this).button('loading');
 			ubme.facebook.init();
@@ -63,9 +63,9 @@ ubme.homePage = function () {
 
 		$(document.body).bind('finished',function(e, p_filteredlikes){
 
-			$('#PageWrapper .jumbotron .btn').button('complete').fadeTo('slow', 0.5);
+			$('#PageWrapper .jumbotron .cleanme').button('complete').removeClass('btn-success').addClass('btn-info');
 
-			$(document.body).off('click', '#PageWrapper .jumbotron .btn')
+			$(document.body).off('click', '#PageWrapper .jumbotron .cleanme')
 			self.showLikes(p_filteredlikes);
 
 
@@ -87,6 +87,14 @@ ubme.homePage = function () {
 			
 		});
 
+	}
+
+	function _set_cookieval () {
+		if($.cookie('the_count')){
+			_count = parseInt($.cookie('the_count'));
+			$('#count').text(_count);
+			ubme.facebook.count(_count);
+		}
 	}
 	
 }();

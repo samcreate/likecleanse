@@ -28,9 +28,9 @@
 	<?php } else { ?>
 		<!-- BEGIN: DEV javacript -->
 		<script src="/lib/js/jquery/jquery-1.8.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/lib/js/jquery/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/lib/js/plugins/handlebars-1.0.rc.1.js" type="text/javascript"></script>
 		<script src="/lib/js/plugins/bootstrap.min.js" type="text/javascript"></script>
-		<script src="/lib/js/master.js" type="text/javascript" charset="utf-8"></script>	
 		<script src="/lib/js/main.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/lib/js/modal.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/lib/js/facebook.js" type="text/javascript" charset="utf-8"></script>

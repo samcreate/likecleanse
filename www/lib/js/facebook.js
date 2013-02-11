@@ -49,6 +49,13 @@ ubme.facebook = function () {
 				 	debug.log("share success");
 				 });
 			
+		},
+		count : function(p_val){
+			if(p_val != null){
+				_count = p_val;
+			}else{
+				return p_val;
+			}
 		}
 		
 	};
@@ -145,15 +152,23 @@ ubme.facebook = function () {
 			   case "Computers/technology":
 			   case "News/media website":
 			   case "Local/travel website":
+			   case "Household supplies":
+			   case "Health/medical/pharmacy":
+			   case "Media/news/publishing":
+			   case "Non-profit organization":
+			   case "Software":
+			   case "Drink":
+			   case "Wine/spirits":
+			   case "Professional services":
+			   case "Event planning/event services":
+			   case "Clothing":
+			   case "Magazine":
+			   case "App page":
 
 			      _filtered_likes.push(_l);
 			   break;
 			}
-			switch (_l.name) {
-			   case "Local business":
-			      _filtered_likes.push(_l);
-			   break;
-			}
+			
 		}
 
 
@@ -161,11 +176,13 @@ ubme.facebook = function () {
 		$(document.body).trigger("finished", {likes:_filtered_likes});
 	}
 
+
 	function _setup_binds () {
 		FB.Event.subscribe('edge.remove',
 		    function(response) {
 		        debug.log('You unliked the URL: ' + response);
 		        _count++;
+		        $.cookie('the_count', _count);
 		        $('#count').text(_count);
 		    }
 		);

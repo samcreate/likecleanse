@@ -72,12 +72,16 @@ margin-top: 28px;
 		#notice{
 			position:fixed;
 			bottom:-10px;
-			right:10px;
+			right:20px;
 			background:white;
 			padding:10px;
 			@include border-radius(10px, 10px);
 			border: 3px solid #ccc;
 			z-index: 999;
+			height:70px;
+			em#count{
+				color: #2f96b4;
+			}
 		}
 	}
 }
