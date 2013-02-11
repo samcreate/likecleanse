@@ -2,7 +2,7 @@
 
 
 	<p class="lead">We have all liked things in the past... too many things to remember. Now Facebook is using those 'likes' to target our friends. STOP THE INSANITY! Reduce the clutter you didn't know you had.  Login below to see the brands targeting you and 'un-like' the unworthy ones.</p>
-	<a class="cleanme btn btn-large btn-success" href="#" data-loading-text="loading..." data-complete-text="finished!">Cleanse Me Now</a>
+	<a class="cleanme btn btn-large btn-success" href="#" data-loading-text="loading..." data-complete-text="Done! Look below.">Cleanse Me Now</a>
 	<div class="alert alert-block alert-error">
 	    <button type="button" class="close" data-dismiss="alert">×</button>
 	    <h4 class="alert-heading">Oops! You got an error!</h4>
