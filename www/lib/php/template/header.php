@@ -54,4 +54,4 @@
 		<div class="jumbotron">
 			
 			<h1 class="logo">Like Cleanser</h1>
-			<h1>Like Colonic</h1>
+			<h1>Facebook Cleanser</h1>
