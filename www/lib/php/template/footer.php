@@ -2,7 +2,7 @@
 		</div><!-- eof #MainContent -->
 
 		<footer id="global-footer">
-
+			<p>Created by: <a href="http://samcreate.com">samcreate</a></p> 
 		</footer>
 	</div>
 	<!--[if lt IE 7 ]>

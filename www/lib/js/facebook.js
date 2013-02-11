@@ -60,9 +60,11 @@ ubme.facebook = function () {
 		FB.login(function(response) {
 	        if (response.authResponse) {
 	           	debug.log("user logged-in");
+	           	 $('.alert').hide();
 	           	_getUsersLikes('/me/likes');
 	        } else {
 	            debug.log("user cancelled logged-in");
+	            $('.alert').show();
 	        }
     	}, {scope: 'user_likes'});
 	}

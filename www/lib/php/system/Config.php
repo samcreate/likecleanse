@@ -34,7 +34,7 @@ class Config {
 	var $use_min;
 	var $debug;
 	var $server_name;
-	var $analytics_id = "%google_id%";
+	var $analytics_id = "UA-38387260-1";
 	var $protocol;
 	var $facebook_app_id;
 	var $page;

@@ -34,7 +34,7 @@ ubme.homePage = function () {
 		showLikes : function(p_obj){
 			var data = {like: p_obj.likes};
 			var likes = likes_template(data);
-			$("#MainContent").append(likes);
+			$("#lholder").append(likes);
 			FB.XFBML.parse();
 		}
 		

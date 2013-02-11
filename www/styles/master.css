@@ -57,8 +57,10 @@ body { padding-top: 20px; padding-bottom: 40px; }
 #PageWrapper { width: 90%; margin: 0px auto; }
 #PageWrapper .jumbotron { margin: 60px 0; text-align: center; }
 #PageWrapper .jumbotron h1 { font-size: 72px; line-height: 1; }
-#PageWrapper .jumbotron .btn { font-size: 21px; padding: 14px 24px; display: none; }
+#PageWrapper .jumbotron .cleanme { font-size: 21px; padding: 14px 24px; display: none; }
 #PageWrapper .jumbotron p.lead { width: 80%; margin: 0px auto 40px auto; }
+#PageWrapper .jumbotron div.alert { margin-top: 40px; display: none; }
+#PageWrapper .jumbotron #lholder { margin-top: 50px; width: 100%; text-align: left; }
 
 /* Global Header */
 /* Main Content */
@@ -67,6 +69,8 @@ body { padding-top: 20px; padding-bottom: 40px; }
 #MainContent #likeHolder .like { background: #eee; padding: 5px; margin: 5px; padding-left: 20px; }
 
 /* Global Footer */
+#global-footer { margin: 0 auto; width: 810px; text-align: center; }
+
 .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 998; }
 
 .modal { position: fixed; top: 50%; left: 50%; margin: -250px 0 0 -327px; width: 616px; padding: 19px; background: #fff; z-index: 999; -webkit-box-shadow: 0 0 10px black; -moz-box-shadow: 0 0 10px black; box-shadow: 0 0 10px black; }
