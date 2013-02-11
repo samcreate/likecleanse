@@ -53,5 +53,6 @@
 	<div id="PageWrapper">
 		<div id="MainContent" role="main">
 		<div class="jumbotron">
-			<img src="/media/images/facebook_share.jpg" alt="">
+			
+			<h1 class="logo">Like Cleanser</h1>
 			<h1>Facebook Cleanser</h1>

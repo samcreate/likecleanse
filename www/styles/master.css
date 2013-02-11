@@ -21,7 +21,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* import your sprites here */
 /* @import "buttons/*.png"; */
 /* Global */
-.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir, #PageWrapper .jumbotron h1.logo { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
 
 .hidden { display: none; visibility: hidden; }
 
@@ -57,6 +57,7 @@ body { padding-top: 20px; padding-bottom: 40px; }
 #PageWrapper { width: 90%; margin: 0px auto; }
 #PageWrapper .jumbotron { margin: 60px 0; text-align: center; }
 #PageWrapper .jumbotron h1 { font-size: 72px; line-height: 1; }
+#PageWrapper .jumbotron h1.logo { background: url('../media/images/facebook_share.jpg?1360548505'); width: 154px; height: 154px; cursor: pointer; border: 0; margin: 0px auto; }
 #PageWrapper .jumbotron .cleanme { font-size: 21px; padding: 14px 24px; display: none; }
 #PageWrapper .jumbotron p.lead { width: 80%; margin: 0px auto 40px auto; }
 #PageWrapper .jumbotron div.alert { margin-top: 40px; display: none; }
@@ -139,7 +140,7 @@ textarea { overflow: auto; vertical-align: top; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  .ir a:after, #PageWrapper .jumbotron h1.logo a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
@@ -2034,7 +2035,7 @@ and (min-width : 1824px) { /* Styles */ }
   a, a:visited { color: #444 !important; text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  .ir a:after, #PageWrapper .jumbotron h1.logo a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }

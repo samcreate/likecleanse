@@ -46,12 +46,25 @@ margin-top: 28px;
 #PageWrapper {
 	width:90%;
 	margin:0px auto;
+
+	
 	.jumbotron {
 		margin: 60px 0;
 		text-align: center;
 		h1{
 			font-size: 72px;
 			line-height: 1;
+		}
+		h1.logo{
+		 $image_path: "/facebook_share.jpg";
+		  @extend .ir; 
+		  @include background(image-url("/media/images"+$image_path));
+
+		  width: image-width($image_path); 
+		  height: image-height($image_path);
+		  cursor: pointer;
+		  border: 0;
+		  margin:0px auto;
 		}
 		.cleanme {
 			font-size: 21px;
