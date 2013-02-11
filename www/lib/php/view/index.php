@@ -16,5 +16,6 @@
   		<p>You've cleaned up: <em id="count">0</em> likes</p> 
   		<a href="#" id="share">Share</a>
   	</div>
+  	<fb:comments href="http://www.likecleanse.com/" width="719" num_posts="10"></fb:comments>
 
 <?php include DIR_TMPL.'/footer.php'; ?>

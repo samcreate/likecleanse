@@ -61,7 +61,7 @@ body { padding-top: 20px; padding-bottom: 40px; }
 #PageWrapper .jumbotron p.lead { width: 80%; margin: 0px auto 40px auto; }
 #PageWrapper .jumbotron div.alert { margin-top: 40px; display: none; }
 #PageWrapper .jumbotron #lholder { margin-top: 50px; width: 100%; text-align: left; }
-#PageWrapper .jumbotron #notice { position: fixed; bottom: -10px; right: 10px; background: white; padding: 10px; -webkit-border-radius: 10px 10px; -moz-border-radius: 10px / 10px; -ms-border-radius: 10px / 10px; -o-border-radius: 10px / 10px; border-radius: 10px / 10px; border: 3px solid #ccc; }
+#PageWrapper .jumbotron #notice { position: fixed; bottom: -10px; right: 10px; background: white; padding: 10px; -webkit-border-radius: 10px 10px; -moz-border-radius: 10px / 10px; -ms-border-radius: 10px / 10px; -o-border-radius: 10px / 10px; border-radius: 10px / 10px; border: 3px solid #ccc; z-index: 999; }
 
 /* Global Header */
 /* Main Content */
