@@ -36,6 +36,7 @@ ubme.homePage = function () {
 			var likes = likes_template(data);
 			$("#lholder").append(likes);
 			FB.XFBML.parse();
+			$('.tip').tooltip();
 		}
 		
 	};
@@ -86,6 +87,7 @@ ubme.homePage = function () {
 			debug.log('share clicked')
 			
 		});
+
 
 	}
 

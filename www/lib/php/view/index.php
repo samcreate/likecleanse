@@ -1,6 +1,5 @@
 <?php include DIR_TMPL.'/header.php'; ?>
 
-
 	<p class="lead">We have all liked things in the past... too many things to remember. Now Facebook is using those 'likes' to target our friends. STOP THE INSANITY! Reduce the clutter you didn't know you had.  Login below to see the brands targeting you and 'un-like' the unworthy ones.</p>
 	<a class="cleanme btn btn-large btn-success" href="#" data-loading-text="loading..." data-complete-text="Look below, and unlike!">Cleanse Me Now</a>
 	<div class="alert alert-block alert-error">
