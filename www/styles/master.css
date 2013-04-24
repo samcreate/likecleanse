@@ -65,6 +65,7 @@ body { padding-top: 20px; padding-bottom: 40px; }
 #PageWrapper .jumbotron #lholder p.help { margin: 0px auto; width: 88%; display: block; text-align: center; font-size: 12px; text-transform: uppercase; }
 #PageWrapper .jumbotron #notice { position: fixed; bottom: -10px; right: 20px; background: white; padding: 10px; -webkit-border-radius: 10px 10px; -moz-border-radius: 10px / 10px; -ms-border-radius: 10px / 10px; -o-border-radius: 10px / 10px; border-radius: 10px / 10px; border: 3px solid #ccc; z-index: 999; height: 70px; }
 #PageWrapper .jumbotron #notice em#count { color: #2f96b4; }
+#PageWrapper .jumbotron .fb_iframe_widget { text-align: left; }
 
 /* Global Header */
 /* Main Content */

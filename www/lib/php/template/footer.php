@@ -35,6 +35,7 @@
 		<script src="/lib/js/modal.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/lib/js/facebook.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/lib/js/homePage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/lib/js/privacy.js" type="text/javascript" charset="utf-8"></script>
 		<!-- END: DEV javascript -->
 	<?php } ?>
 

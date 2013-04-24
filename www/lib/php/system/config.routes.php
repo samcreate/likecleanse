@@ -28,4 +28,5 @@ Router::add('#^/regex/(test1|test2|test3)/$#', DIR_CTRL.'/regex.php', Router::RO
  *      /news/archive/ goes to news/archive.php
  */
  
+ Router::add('/privacy', DIR_CTRL.'/privacy.php');
  ?>

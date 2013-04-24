@@ -3,6 +3,7 @@
  * @depends modal.js
  * @depends facebook.js
  * @depends homePage.js
+ * @depends privacy.js 
  */
 
 
