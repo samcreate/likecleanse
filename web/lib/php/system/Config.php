@@ -50,7 +50,7 @@ class Config {
 				
 		switch ($this->server_name) {
 
-			case "ubme.evb.com":
+			case "ubme.local.com":
 			
 				$this->environment = LOCAL;
 				$this->dbhost = 'localhost';
