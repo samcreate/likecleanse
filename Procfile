@@ -1,1 +1,1 @@
-web:    sh www/conf/web-boot.sh
+web: vendor/bin/heroku-php-apache2 web/
