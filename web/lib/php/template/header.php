@@ -53,5 +53,4 @@
 		<div id="MainContent" role="main">
 		<div class="jumbotron">
 			
-			<h1 class="logo">Like Cleanser</h1>
 			<h1>Like Cleanser</h1>

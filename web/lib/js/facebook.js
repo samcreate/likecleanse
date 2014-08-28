@@ -40,7 +40,7 @@ ubme.facebook = function () {
 		          method: 'feed',
 		          redirect_uri: window.location.href,
 		          link: window.location.href,
-		          picture: "http://www.likecleanse.com/media/images/facebook_share.jpg",
+		          picture: "http://www.likecleanse.com/media/images/facebook_share.jpg?version=22",
 		          name: 'I just removed '+_count+' likes I didn\'t know I had',
 		          caption: 'Cleaning likes you didn\'t know you had',
 		          description: 'We have all liked things in the past... too many things to remember. Now Facebook is using those \'likes\' to target our friends. STOP THE INSANITY! Reduce the clutter you didn\'t know you had.  Login below to see the brands targeting you and \'un-like\' the unworthy ones.'
