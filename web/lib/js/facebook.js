@@ -110,7 +110,7 @@ ubme.facebook = function () {
 			// debug.log( index + " : " + response.data[index]);
 			_likes[index] = response.data[index];
 		}
-		if(response.paging || response.paging.next){
+		if(response.paging.next || response.paging ){
 
 			debug.log("get another page",response.paging.next);
 			$.ajax({
