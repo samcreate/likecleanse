@@ -112,7 +112,7 @@ ubme.facebook = function () {
 		}
 
 		debug.log(response.paging);
-		if(response.paging.next || response.paging ){
+		if(response.paging.next && response.paging ){
 
 			debug.log("get another page",response.paging.next);
 			$.ajax({
